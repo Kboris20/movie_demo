@@ -16,7 +16,7 @@ angular.module('movieDemoApp')
     ];
 	
 	$scope.monClick = function(){
-		$scope.awesomeThings.push("Boris Klett");
+		$scope.awesomeThings.push("Boris Kltt");
 	}
   }
   
