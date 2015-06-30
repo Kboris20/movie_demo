@@ -7,12 +7,28 @@
   <p><a class="btn btn-lg btn-success" ng-href="#/" ng-click="monClick()">Splendid!<span class="glyphicon glyphicon-ok"></span></a></p>
 </div>
 
+<input type="text" ng-model="nouveauFilm" />
 <div>
-	{{awesomeThings}}
+	{{films [3]}}
 </div>
 
+<p>{{nouveauFilm}}</p>
+<p ng-bind="nouveauFilm"></p>
+<!-- | = a un filtre -->
+<p>Hello uppercase: {{nouveauFilm | uppercase}}</p>
+<p>Hello <span ng-bind="nouveauFilm"></span></p>
+
+<label><input type="number" ng-model="nbAffiche"></input> nb à afficher
+
+<input type="checkbox" ng-model="active"></input></label>
+<button class="btn btn-primary" ng-click="debut=debut+10">+10</button> {{debut}}
+<!-- ng-hide > inverse ou fair ng-hide="!active"-->
+<div ng-show="active">
+
+
 <ul>
-	<li ng-repeat="el in awesomeThings track by $index">{{el}}</li>
+	<li ng-repeat="film in films | limitTo:nbAffiche:debut track by $index">{{film}}<a ng-click="supprimerFilm(film)"> X</a></li>
+	<a ng-href="#/film/{{$index}}/msg"></a>
 </ul>
 
 
