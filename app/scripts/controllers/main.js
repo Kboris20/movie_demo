@@ -8,11 +8,12 @@
  * Controller of the movieDemoApp
  */
 angular.module('movieDemoApp')
-  .controller('MainCtrl', function ($scope, moviesdb) {
+  .controller('MainCtrl', function ($scope, moviesdb, $rootScope) {
 
   	$scope.moviesdb = moviesdb;
-
-
+	$rootScope.moviesdb=moviesdb;
+	
+	$rootScope.bgImage="";
 
     var save = function(films){
     	moviesdb.saveFilms(films);

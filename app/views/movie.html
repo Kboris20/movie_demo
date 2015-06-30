@@ -4,5 +4,16 @@
 
 
 <p>{{film.title}}</p>
-<div class="description" style="background-image: url({{film.backdrop_path | urlPoster}}); background-size: cover"><p>{{film.overview}}</p></div>
-<img ng-src="{{film.poster_path | urlPoster}}"/>
+<div class="movieDemoApp">
+	<p>{{film.overview}}</p>
+	<img ng-src="{{film.poster_path | urlPoster}}"/>
+
+	<ul>
+		<li ng-repeat="similarfilm in film.similar.results track by $index">
+			<a ng-href="#/film/{{similarfilm.id}}">
+				<img ng-src="{{similarfilm.poster_path | urlPoster}}"/>
+				<p>{{similarfilm.title}}</p>
+			</a>
+		</li>
+	</ul>
+</div>

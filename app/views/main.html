@@ -28,7 +28,7 @@
 
 
 <ul>
-	<li ng-repeat="film in moviesdb.getFilms() | limitTo:nbAffiche:debut track by $index"><a ng-href="#/film/{{$index}}"><img ng-src="{{film.poster_path | urlPoster}}"/><p>{{film.title}}</a><a ng-click="supprimerFilm(film)"> X</a></a></li>
+	<li ng-repeat="film in moviesdb.getFilms() | limitTo:nbAffiche:debut track by $index"><a ng-href="#/film/{{film.id}}"><img ng-src="{{film.poster_path | urlPoster}}"/><p>{{film.title}}</a><a ng-click="supprimerFilm(film)"> X</a></a></li>
 </ul>
 
 
