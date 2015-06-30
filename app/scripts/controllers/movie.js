@@ -12,6 +12,9 @@ angular.module('movieDemoApp')
 
     $scope.id = $routeParams.id;
     
-    var films = moviesdb.getFilms();
+    var films=moviesdb.getFilms();
+
     $scope.film = films[$scope.id];
+
+
   });

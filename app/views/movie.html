@@ -3,6 +3,6 @@
 
 
 
-<p>{{film.titre}}, {{film.comment}}</p>
-
-<p>This is the movie view.</p>
+<p>{{film.title}}</p>
+<div class="description" style="background-image: url({{film.backdrop_path | urlPoster}}); background-size: cover"><p>{{film.overview}}</p></div>
+<img ng-src="{{film.poster_path | urlPoster}}"/>

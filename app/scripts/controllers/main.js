@@ -10,14 +10,9 @@
 angular.module('movieDemoApp')
   .controller('MainCtrl', function ($scope, moviesdb) {
 
-  	$scope.films = [];
+  	$scope.moviesdb = moviesdb;
 
 
-  	var load = function(){
-		$scope.films = moviesdb.getFilms();
-  	};
-  	
-    load();
 
     var save = function(films){
     	moviesdb.saveFilms(films);

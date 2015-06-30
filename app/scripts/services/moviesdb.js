@@ -8,9 +8,17 @@
  * Factory in the movieApp.
  */
 angular.module('movieDemoApp')
-  .factory('moviesdb', function () {
+  .factory('moviesdb', function ($http) {
     // Service logic
     // ...
+
+    var films= [];
+
+    $http.get('http://amc.ig.he-arc.ch:3003/movie/upcoming?language=fr')
+      .success(function(data){
+        films = data.results;
+      }
+     );
 
     var meaningOfLife = 42;
 
@@ -21,7 +29,6 @@ angular.module('movieDemoApp')
       },
 
       getFilms: function(){
-        var films = JSON.parse(localStorage.getItem ('mes_films')||'[]');
         return films;
       },
 
