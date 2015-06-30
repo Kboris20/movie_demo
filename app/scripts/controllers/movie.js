@@ -8,6 +8,10 @@
  * Controller of the movieDemoApp
  */
 angular.module('movieDemoApp')
-  .controller('MovieCtrl', function ($scope, $routeParams) {
+  .controller('MovieCtrl', function ($scope, $routeParams, moviesdb) {
+
     $scope.id = $routeParams.id;
+    
+    var films = moviesdb.getFilms();
+    $scope.film = films[$scope.id];
   });
