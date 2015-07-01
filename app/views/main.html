@@ -1,35 +1,21 @@
+<div class="col-md-12" style="background-color: black; border-radius: 25px; border: 2px solid #8AC007; padding: 20px">
+
 <div class="jumbotron">
   <h1>FilmsBoris</h1>
 	
-	<div class="row">
-	   <div class="col-md-6" style="text-align: right">
-				Rechercher un film
-		</div>
-		<div class="col-md-6" style="text-align: left">
-		 <input type="text" ng-model="titre" />
-		</div>
-	</div>
-	  <p class="lead">
-		<a class="btn btn-lg btn-success" ng-href="#/" ng-click="monClick()">Recherche 
-			<span class="glyphicon glyphicon-search"></span>
-		</a>
-		<a class="btn btn-lg btn-success" ng-href="#/" ng-click="refresh()">Revenir</a> 		
-
-  	</p>
 </div>
 
-<label><input type="number" ng-model="nbAffiche"></input> nb à afficher</label>
-<button class="btn btn-primary" ng-click="debut=debut+10">+10</button> {{debut}}
-<!-- ng-hide > inverse ou fair ng-hide="!active"-->
-<div>
 
 
-<ul>
-	<li ng-repeat="film in moviesdb.getFilms() | limitTo:nbAffiche:debut track by $index">
-		<a ng-href="#/film/{{film.id}}">
-			<img ng-src="{{film.poster_path | urlPoster}}"/>
-			<p>{{film.title}}</p>
-		</a>
-	</li>
-</ul>
+	<div ng-repeat="film in moviesdb.getFilms() track by $index">
+		<div class="col-md-4" style="text-align: left">
+			<a ng-href="#/film/{{film.id}}">
+				<img ng-src="{{film.poster_path | urlPoster}}"/>
+				<p>{{film.title}}</p>
+			</a>
+		</div>
+	</div>
+
+
 <p>un film: {{unfilm.title}}</p>
+</div>

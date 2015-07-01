@@ -14,11 +14,12 @@ angular.module('movieDemoApp')
 	 
   	$scope.moviesdb = moviesdb;
 
-	$rootScope.moviesdb=moviesdb;
 
-	$scope.refresh = function(){
+	$rootScope.refresh = function(){
 		moviesdb.chargerFilms();
 		$scope.moviesdb = moviesdb;
+		$rootScope.titre="";
+		
 	}
 	
 	$rootScope.bgImage="";
@@ -27,12 +28,9 @@ angular.module('movieDemoApp')
   $scope.unfilm = desfilm[0];
 
 
-    $scope.nbAffiche=10;
-	$scope.debut=0;
-
-	$scope.monClick = function(){
+   
+	$rootScope.monClick = function(){
 		moviesdb.rechercherFilm($scope.titre);
 		$scope.moviesdb = moviesdb;
-	
 		};
   });

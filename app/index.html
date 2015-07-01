@@ -38,17 +38,42 @@
               <span class="icon-bar"></span>
             </button>
 
-            <a class="navbar-brand" href="#/">movie</a>
+              <a class="navbar-brand" ng-click="refresh()" href="#/">Films</a>
           </div>
 
           <div class="collapse navbar-collapse" id="js-navbar-collapse">
 
             <ul class="nav navbar-nav">
-              <li class="active"><a ng-click="refresh" href="#/">Home</a></li>
               <li><a ng-href="#/about">About</a></li>
               <li><a ng-href="#/">Contact</a></li>
             </ul>
+
           </div>
+
+
+
+
+           <div class="navbar-brand">
+              <div>
+                <div class="input-group">
+                    <input type="text" ng-model="titre" class="form-control" placeholder="Rechercher un film...">
+                    <span class="input-group-btn">
+                         <button class="btn btn-default" type="button">
+                            <a ng-href="#/" ng-click="monClick()">
+                               <span class="glyphicon glyphicon-search"></span>
+                            </a>
+                         </button>
+                    </span>
+                </div><!-- /input-group -->
+              </div><!-- /.col-lg-12 -->
+           </div><!-- /row -->
+
+
+
+
+
+
+
         </div>
       </div>
     </div>
