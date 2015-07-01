@@ -1,23 +1,21 @@
 <div class="jumbotron">
-  <h1>'Allo, 'Allo!</h1>
-  <p class="lead">
-    <img src="images/yeoman.png" alt="I'm Yeoman"><br>
-    Always a pleasure scaffolding your apps.
+  <h1>FilmsBoris</h1>
+	
+	<div class="row">
+	   <div class="col-md-6" style="text-align: right">
+				Rechercher un film
+		</div>
+		<div class="col-md-6" style="text-align: left">
+		 <input type="text" ng-model="titre" />
+		</div>
+	</div>
+	  <p><p class="lead">
+  	<a class="btn btn-lg btn-success" ng-href="#/" ng-click="monClick()">Recherche 
+  		<span class="glyphicon glyphicon-search"></span>
+  	</a>
   </p>
-  <p><a class="btn btn-lg btn-success" ng-href="#/" ng-click="monClick()">Splendid!<span class="glyphicon glyphicon-ok"></span></a></p>
 </div>
 
-<input type="text" ng-model="titre" />
-<input type="text" ng-model="comment" />
-<div>
-	{{films [3]}}
-</div>
-
-<p>{{titre}}, {{comment}}</p>
-<p ng-bind="titre"></p>
-<!-- | = a un filtre -->
-<p>Hello uppercase: {{titre | uppercase}}</p>
-<p>Hello <span ng-bind="nouveauFilm"></span></p>
 
 <label><input type="number" ng-model="nbAffiche"></input> nb à afficher
 
@@ -28,7 +26,12 @@
 
 
 <ul>
-	<li ng-repeat="film in moviesdb.getFilms() | limitTo:nbAffiche:debut track by $index"><a ng-href="#/film/{{film.id}}"><img ng-src="{{film.poster_path | urlPoster}}"/><p>{{film.title}}</a><a ng-click="supprimerFilm(film)"> X</a></a></li>
+	<li ng-repeat="film in moviesdb.getFilms() | limitTo:nbAffiche:debut track by $index">
+		<a ng-href="#/film/{{film.id}}">
+			<img ng-src="{{film.poster_path | urlPoster}}"/>
+			<p>{{film.title}}</p>
+		</a>
+	</li>
 </ul>
 
 

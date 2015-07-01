@@ -1,19 +1,37 @@
 
 
+<div class="row">
 
+	<div class="movieDemoApp">
 
+		<div class="col-md-2" style="text-align: left; margin-top 5%">
+			<img ng-src="{{film.poster_path | urlPoster}}"/>
+		</div>
 
-<p>{{film.title}}</p>
-<div class="movieDemoApp">
-	<p>{{film.overview}}</p>
-	<img ng-src="{{film.poster_path | urlPoster}}"/>
+		<div class="col-md-12" style="margin-top 5%; background-color: rgba(255, 255, 255, 0.65)">
+			<h2>Résumé</h2>
+			<br/>
+			<p style:"text-align: justify">{{film.overview}}</p>
 
-	<ul>
-		<li ng-repeat="similarfilm in film.similar.results track by $index">
-			<a ng-href="#/film/{{similarfilm.id}}">
-				<img ng-src="{{similarfilm.poster_path | urlPoster}}"/>
-				<p>{{similarfilm.title}}</p>
-			</a>
-		</li>
-	</ul>
+			<br/>
+			<br/>
+			<h2>Sortie</h2>
+			<br/>
+			<flag country="us" size="32"></flag>
+
+			<br/>
+			<br/>
+			<h2>Similaires</h2>
+			<br/>
+			<slick dots="true" infinite="false" slides-to-show="3" slides-to-scroll="3" responsive="breakpoints" init-onload="true" data="film.similar.results">
+				
+				<div class="col-md-12" ng-repeat="similarfilm in film.similar.results track by $index">
+					<a ng-href="#/film/{{similarfilm.id}}">
+						<img ng-src="{{similarfilm.poster_path | urlPoster}}"/>
+					</a>
+				</div> 
+				
+			</slick>
+		</div>
+	</div>
 </div>

@@ -13,7 +13,7 @@ angular.module('movieDemoApp')
   $rootScope.moviesdb = moviesdb
    var id = $routeParams.id;
 
-     $http.get('http://amc.ig.he-arc.ch:3003/movie/'+id+'?append_to_response=similar,release,credits')
+     $http.get('http://amc.ig.he-arc.ch:3003/movie/'+id+'?append_to_response=similar,releases,credits')
       .success(function(data){
         $scope.film = data;
         $rootScope.bgImage = $scope.film.backdrop_path;

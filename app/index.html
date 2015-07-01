@@ -10,12 +10,17 @@
     <!-- bower:css -->
     <!-- endbower -->
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="bower_components/slick-carousel/slick/slick-theme.css">
+    <link rel="stylesheet" href="bower_components/slick-carousel/slick/slick.css">
+    <link rel="stylesheet" type="text/css" href="http://cloud.github.com/downloads/lafeber/world-flags-sprite/flags32.css" />
     <!-- endbuild -->
+    
     <!-- build:css(.tmp) styles/main.css -->
+    
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
   </head>
-  <body ng-app="movieDemoApp" style="background-image: url(http://image.tmdb.org/t/p/w1280{{bgImage}}); background-size: contain; background-repeat: repeat">
+  <body ng-app="movieDemoApp" style="background-image: url(http://image.tmdb.org/t/p/w1280{{bgImage}}); background-size: cover; background-repeat: no-repeat">
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -81,7 +86,11 @@
     <script src="bower_components/angular-route/angular-route.js"></script>
     <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
     <script src="bower_components/angular-touch/angular-touch.js"></script>
+    <script src="bower_components/ng-flags/src/directives/ng-flags.js"></script>
     <!-- endbower -->
+
+    <script src="bower_components/slick-carousel/slick/slick.js"></script>
+    <script src="bower_components/angular-slick/dist/slick.js"></script>
     <!-- endbuild -->
 
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
