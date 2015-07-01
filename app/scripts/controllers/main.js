@@ -9,10 +9,17 @@
  */
 angular.module('movieDemoApp')
   .controller('MainCtrl', function ($scope, moviesdb, $rootScope, $http) {
-
+	
+	moviesdb.chargerFilms();
+	 
   	$scope.moviesdb = moviesdb;
 
 	$rootScope.moviesdb=moviesdb;
+
+	$scope.refresh = function(){
+		moviesdb.chargerFilms();
+		$scope.moviesdb = moviesdb;
+	}
 	
 	$rootScope.bgImage="";
 
@@ -26,8 +33,6 @@ angular.module('movieDemoApp')
 	$scope.monClick = function(){
 		moviesdb.rechercherFilm($scope.titre);
 		$scope.moviesdb = moviesdb;
-		$scope.titre="";
-		};
 	
-	$scope.active = true;
+		};
   });

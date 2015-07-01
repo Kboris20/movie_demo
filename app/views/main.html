@@ -9,19 +9,19 @@
 		 <input type="text" ng-model="titre" />
 		</div>
 	</div>
-	  <p><p class="lead">
-  	<a class="btn btn-lg btn-success" ng-href="#/" ng-click="monClick()">Recherche 
-  		<span class="glyphicon glyphicon-search"></span>
-  	</a>
-  </p>
+	  <p class="lead">
+		<a class="btn btn-lg btn-success" ng-href="#/" ng-click="monClick()">Recherche 
+			<span class="glyphicon glyphicon-search"></span>
+		</a>
+		<a class="btn btn-lg btn-success" ng-href="#/" ng-click="refresh()">Revenir</a> 		
+
+  	</p>
 </div>
 
-<label><input type="number" ng-model="nbAffiche"></input> nb à afficher
-
-<input type="checkbox" ng-model="active"></input></label>
+<label><input type="number" ng-model="nbAffiche"></input> nb à afficher</label>
 <button class="btn btn-primary" ng-click="debut=debut+10">+10</button> {{debut}}
 <!-- ng-hide > inverse ou fair ng-hide="!active"-->
-<div ng-show="active">
+<div>
 
 
 <ul>

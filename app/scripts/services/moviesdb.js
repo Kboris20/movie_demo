@@ -14,14 +14,7 @@ angular.module('movieDemoApp')
 
     var films= [];
     var filmsRecherches=[];
-
-    $http.get('http://amc.ig.he-arc.ch:3003/movie/upcoming?language=fr')
-      .success(function(data){
-        films = data.results;
-      }
-     );
-
-      
+     
 
     var meaningOfLife = 42;
 
@@ -40,6 +33,15 @@ angular.module('movieDemoApp')
         .success(function(data){
          films = data.results;
         });
+
+     },
+
+      chargerFilms: function(){
+         $http.get('http://amc.ig.he-arc.ch:3003/movie/upcoming?language=fr')
+        .success(function(data){
+          films = data.results;
+      });
+        
 
       }
       
