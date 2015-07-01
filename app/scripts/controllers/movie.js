@@ -36,6 +36,16 @@ angular.module('movieDemoApp')
            $scope.acteurs.push(actors[i]);
          }
 
+         $scope.realisateur;
+         var realisators = $scope.film.credits.crew;
+          
+         for (var i = 0; i < realisators.length; i++){
+         
+          if(realisators[i].job == "Editor"){
+            $scope.realisateur = realisators[i];
+          }
+         }
+
     
 
       });
