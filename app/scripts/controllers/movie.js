@@ -20,13 +20,24 @@ angular.module('movieDemoApp')
         
          $scope.pays=[];
          var countries = $scope.film.releases.countries;
+
          for (var i = 0; i < countries.length; i++){
          
           if(countries[i].iso_3166_1 == 'DE' || countries[i].iso_3166_1 == 'FR' || countries[i].iso_3166_1  == 'US'){
            $scope.pays.push(countries[i]);
+         }}
+
+
+         $scope.acteurs =[];
+         var actors = $scope.film.credits.cast;
+          
+         for (var i = 0; i < 5; i++){
+         
+           $scope.acteurs.push(actors[i]);
          }
-     };
-     
+
+    
+
       });
 
   });

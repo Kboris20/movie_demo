@@ -4,27 +4,48 @@
 
 	<div class="movieDemoApp">
 
-		<div class="col-md-4" style="text-align: left; margin-top 5%">
-			<img ng-src="{{film.poster_path | urlPoster}}"/>
+		<div class="col-md-12" style="margin-top 5%; background-color: rgba(255, 255, 255, 0.65)">
+			<div class="col-md-7">
+				<h1>{{film.title}}</h1>
+			</div>
+			<div class="col-md-1"></div>
+			<div class="col-md-3" style="text-align: right">
+				<img ng-src="{{film.poster_path | urlPoster}}"/>
+			</div>
+			
 		</div>
 
-		<div class="col-md-12" style="margin-top 5%; background-color: rgba(255, 255, 255, 0.65)">
+		<div class="col-md-12"> </div>
+		<div class="col-md-12"> </div>
+		<div class="col-md-12"> </div>
+		<div class="col-md-12"> </div>
+
+		<div class="col-md-12" style="margin-top 20%; background-color: rgba(255, 255, 255, 0.65)">
 			<h2>Résumé</h2>
 			<br/>
 			<p style:"text-align: justify">{{film.overview}}</p>
 
 			<br/>
 			<br/>
-			<h2>Sortie</h2>
+			<h2>Sorties</h2>
 			<br/>
 			<div class="col-md-12" ng-repeat="countriesfilm in pays track by $index">
 				<flag country="{{countriesfilm.iso_3166_1}}" size="32"></flag><p>{{countriesfilm.release_date}}</p>
 					
 			</div> 
+			
+			<br/>
+			<br/>
+			<h2>Acteurs</h2>
+			<br/>
+			<div class="col-md-12" ng-repeat="actorsfilm in acteurs track by $index">
+				<h4>{{actorsfilm.character}}</h4><p>{{actorsfilm.name}}</p>
+					
+			</div> 
 
 			<br/>
 			<br/>
-			<h2>Similaires</h2>
+			<h2>Films similaires</h2>
 			<br/>
 			<slick dots="true" infinite="false" slides-to-show="3" slides-to-scroll="3" responsive="breakpoints" init-onload="true" data="film.similar.results">
 				
