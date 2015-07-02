@@ -30,7 +30,7 @@ angular.module('movieDemoApp')
 
    
 	$rootScope.monClick = function(){
-		moviesdb.rechercherFilm($scope.titre);
+		moviesdb.rechercherFilm($rootScope.titre);
 		$scope.moviesdb = moviesdb;
 		};
   });
