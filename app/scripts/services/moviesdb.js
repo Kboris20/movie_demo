@@ -13,7 +13,25 @@ angular.module('movieDemoApp')
     // ...
 
     var films= [];
-    var filmsRecherches=[];
+
+    var movies = [];
+
+    var moviesLS = localStorage.getItem('movies');
+    if (moviesLS) {
+		var movies = JSON.parse(moviesLS);
+    }
+	else {
+    	movies = [];
+    }
+
+    function stockageLocal () {
+      localStorage.setItem('movies', JSON.stringify(movies));
+	}
+
+
+
+
+
      
 
     var meaningOfLife = 42;
@@ -43,7 +61,38 @@ angular.module('movieDemoApp')
       });
         
 
-      }
+      },
+
+
+
+    addFavori: function (id) {
+	  	movies.push(id);
+	  	stockageLocal ();
+	  },
+
+	  getFavoris: function () {
+	  	return movies;
+	  },
+
+	  deleteFavori: function (id) {
+        movies.splice(movies.indexOf(id), 1);
+	  	stockageLocal ();
+	  },
+
+	  isId: function (id) {
+        for (var i=0; i<movies.length; i++) {
+          if(movies.indexOf(id) > -1) {
+            return true;
+          }
+          else {
+            return false;
+          }
+        }
+	  }
+
+
+
+      
       
     };
   });

@@ -36,4 +36,10 @@ angular.module('movieDemoApp')
 		moviesdb.rechercherFilm(titre);
 		$scope.moviesdb = moviesdb;
 		};
+
+
+		$scope.addFavori = function (filmId) {
+			moviesdb.addFavori(filmId);
+		}
+
   })

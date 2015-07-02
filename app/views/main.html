@@ -8,7 +8,10 @@
 
 
 	<div ng-repeat="film in moviesdb.getFilms() track by $index">
-		<div class="col-md-4" style="text-align: left">
+		<div class="col-md-4 fav" style="text-align: left">
+			<button type="button" class="btn btn-success" ng-click="addFavori(film.id)" ng-hide="moviesdb.isId(film.id)">
+				<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+			</button>
 			<a ng-href="#/film/{{film.id}}">
 				<img ng-src="{{film.poster_path | urlPoster}}"/>
 				<p>{{film.title}}</p>
