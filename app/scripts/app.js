@@ -29,6 +29,10 @@ angular
         templateUrl: 'views/movie.html',
         controller: 'MovieCtrl'
       })
+      .when('/recherche/:query', {
+        templateUrl: 'views/main.html',
+        controller: 'MainCtrl'
+      })
       .when('/about', {
         templateUrl: 'views/about.html',
         controller: 'AboutCtrl'

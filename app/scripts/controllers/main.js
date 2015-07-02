@@ -8,11 +8,14 @@
  * Controller of the movieDemoApp
  */
 angular.module('movieDemoApp')
-  .controller('MainCtrl', function ($scope, moviesdb, $rootScope, $http) {
+  .controller('MainCtrl', function ($scope, moviesdb, $rootScope, $http, $routeParams) {
 	
 	moviesdb.chargerFilms();
-	 
+	var titre = null;
+	var titre = $routeParams.query; 
   	$scope.moviesdb = moviesdb;
+
+
 
 
 	$rootScope.refresh = function(){
@@ -29,8 +32,8 @@ angular.module('movieDemoApp')
 
 
    
-	$rootScope.monClick = function(){
-		moviesdb.rechercherFilm($rootScope.titre);
+	if (titre != null){
+		moviesdb.rechercherFilm(titre);
 		$scope.moviesdb = moviesdb;
 		};
-  });
+  })
