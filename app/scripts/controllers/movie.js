@@ -10,6 +10,7 @@
 angular.module('movieDemoApp')
   .controller('MovieCtrl', function ($scope, $routeParams, moviesdb, $http, $rootScope) {
   
+  $rootScope.titre="";
   $rootScope.moviesdb = moviesdb
    var id = $routeParams.id;
 
@@ -31,7 +32,7 @@ angular.module('movieDemoApp')
          $scope.acteurs =[];
          var actors = $scope.film.credits.cast;
           
-         for (var i = 0; i < 5; i++){
+         for (var i = 0; i < 6; i++){
          
            $scope.acteurs.push(actors[i]);
          }

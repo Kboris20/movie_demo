@@ -4,7 +4,7 @@
 
 	<div class="movieDemoApp">
 
-		<div class="col-md-12" style="margin-top 5%; background-color: rgba(255, 255, 255, 0.65)">
+		<div class="col-md-12" style="background-color: rgba(255, 255, 255, 0.65); border-radius: 25px;">
 			<div class="col-md-7">
 				<h1>{{film.title}}</h1>
 			</div>
@@ -15,12 +15,8 @@
 			
 		</div>
 
-		<div class="col-md-12"> </div>
-		<div class="col-md-12"> </div>
-		<div class="col-md-12"> </div>
-		<div class="col-md-12"> </div>
 
-		<div class="col-md-12" style="margin-top 20%; background-color: rgba(255, 255, 255, 0.65)">
+		<div class="col-md-12" style="margin-top 20%; background-color: rgba(255, 255, 255, 0.65); border-radius: 25px;">
 			<h2>Résumé</h2>
 			<br/>
 			<p style:"text-align: justify">{{film.overview}}</p>
@@ -29,26 +25,37 @@
 			<br/>
 			<h2>Sorties</h2>
 			<br/>
-			<div class="col-md-12" ng-repeat="countriesfilm in pays track by $index">
-				<flag country="{{countriesfilm.iso_3166_1}}" size="32"></flag><p>{{countriesfilm.release_date}}</p>
-					
+			<div ng-repeat="countriesfilm in pays track by $index">
+				<div class="col-md-4" style="text-align: left">
+					<flag country="{{countriesfilm.iso_3166_1}}" size="32"></flag><p>{{countriesfilm.release_date}}</p>
+				</div>	
 			</div> 
+			
+			<br/>
+			<br/>
+			<div class="col-md-12" style="text-align: left"> </div>
 
 			<br/>
 			<br/>
 			<h2>Acteurs</h2>
-			<br/>
-			<div class="col-md-12" ng-repeat="actorsfilm in acteurs track by $index">
-				<h4>{{actorsfilm.character}}</h4>
-				<p>{{actorsfilm.name}}</p>
+			<div ng-repeat="actorsfilm in acteurs track by $index">
+				<div class="col-md-5" style="text-align: left">
+					<h4>{{actorsfilm.character}}</h4>
+					<p>{{actorsfilm.name}}</p>
+				</div>
 
 			</div> 
 
-			<br/>
-			<br/>
-			<h2>Réalisateur</h2>
-			<p>{{realisateur.name}}</p>
+			<div class="col-md-12"> 
+				<br/>
+				<br/>
+				<h2>Réalisateur</h2>
+				<p>{{realisateur.name}}</p>
+			</div>
 
+
+
+			<div class="col-md-12">
 			<br/>
 			<br/>
 			<h2>Films similaires</h2>
@@ -62,6 +69,7 @@
 				</div> 
 				
 			</slick>
+		    </div>
 		</div>
 	</div>
 </div>
